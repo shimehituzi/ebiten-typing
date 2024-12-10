@@ -1,0 +1,19 @@
+# .air.toml
+root = "."
+tmp_dir = "air"
+
+[build]
+  cmd = "./scripts/air_build.sh"
+  bin = "./scripts/air_run.sh"
+  pre_cmd = ["go test ./..."]
+  exclude_regex = ["_test.go"]
+
+[log]
+  level = "debug"
+
+[watch]
+  includes = ["."]
+  excludes = ["scripts", "air", "vendor", "bin", "*.md", "*.log"]
+
+[misc]
+  clean_on_exit = true
